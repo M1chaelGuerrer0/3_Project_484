@@ -42,13 +42,20 @@ function toggleStatus(e) {
 
     if (!statusOutput.classList.contains("hidden")) {
         mainTitle.style.backgroundColor = "yellow";
+        createTimestamp();
     }
     else {
         mainTitle.style.backgroundColor = "";
     }
-
 }
+
 toggleButton.addEventListener("click", toggleStatus);
+
+function createTimestamp() {
+    const timestamp = document.createElement("span");
+    timestamp.innerHTML = new Date().toLocaleTimeString();
+    statusOutput.appendChild(timestamp);
+}
 /* ======================================= */
 // --- Task 10: Timed Animation ---
 // Define the startFlashing() and stopFlashing() functions using
