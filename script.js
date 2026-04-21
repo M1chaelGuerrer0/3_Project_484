@@ -37,7 +37,16 @@ toggleButton.setAttribute("data-action", "status-toggle");
 // here to handle the click event on the toggleButton [6, 7].
 function toggleStatus(e) {
     statusOutput.classList.toggle("hidden");
+    
     e.preventDefault(); // stop the anchor link from refreshing or jumping the page
+
+    if (!statusOutput.classList.contains("hidden")) {
+        mainTitle.style.backgroundColor = "yellow";
+    }
+    else {
+        mainTitle.style.backgroundColor = "";
+    }
+
 }
 toggleButton.addEventListener("click", toggleStatus);
 /* ======================================= */
