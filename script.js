@@ -70,6 +70,7 @@ function createTimestamp() {
 // setInterval() and clearInterval() [8, 9], and bind them to the
 // timerButton using addEventListener for 'click' and 'dblclick' [10].
 function startFlashing() {
+    clearInterval(intervalId); // prevents dupes and makes it easier to double click
     intervalId = setInterval(() => {
         controlPanel.classList.toggle("hidden");
     }, 500); // Change color every 500ms
